@@ -206,7 +206,7 @@ header label{
 .servicios .caja{
     align-items: center;
     justify-content: center;
-    gap: 5%;
+    column-gap: 5%;
 }
 .servicios .caja img{
     width: 18%;
