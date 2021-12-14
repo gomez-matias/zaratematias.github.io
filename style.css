@@ -566,12 +566,12 @@ header label{
         font-size: 1.9rem;
     }
     .servicios{
-        gap: 5%;
+        gap: 8%;
     }
     .servicios .caja{
         flex-direction: column;
         width: 100%;
-        gap: 4em;
+        gap: 5%;
     }
     .servicios .caja img{
         width: 60%;
