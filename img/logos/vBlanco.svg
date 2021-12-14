@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000.9472"
+   height="1001.5607"
+   viewBox="0 0 264.83394 264.99626"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="vBlanco.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     width="1000mm"
+     units="px"
+     inkscape:zoom="0.37059484"
+     inkscape:cx="-271.18564"
+     inkscape:cy="411.5006"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid824"
+       originx="0.13229149"
+       originy="0.093544208"
+       spacingy="5.2916666"
+       spacingx="5.2916666"
+       color="#3f8dda"
+       opacity="0.34901961"
+       empcolor="#ff3f1f"
+       empopacity="0.37254902" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.1322915,0.09354421)">
+    <path
+       id="path859"
+       style="fill:#ffffff;stroke:none;stroke-width:1.00157481;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       d="M 0.5,0.35351562 V 1000.3535 L 333.83398,667.01953 Z M 333.83398,667.01953 500.5,1000.3535 1000.5,0.35351562 Z"
+       transform="matrix(0.26458333,0,0,0.26458333,-0.1322915,-0.09354421)" />
+  </g>
+</svg>
