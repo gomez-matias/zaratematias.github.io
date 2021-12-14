@@ -206,7 +206,7 @@ header label{
 .servicios .caja{
     align-items: center;
     justify-content: center;
-    column-gap: 5%;
+    gap: 5%;
 }
 .servicios .caja img{
     width: 18%;
@@ -566,7 +566,7 @@ header label{
         font-size: 1.9rem;
     }
     .servicios{
-        gap: 8em;
+        gap: 5%;
     }
     .servicios .caja{
         flex-direction: column;
