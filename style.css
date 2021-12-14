@@ -567,11 +567,15 @@ header label{
     }
     .servicios{
         gap: 10rem;
+        -moz-column-gap: 10rem;
+        -webkit-column-gap: 10rem;
     }
     .servicios .caja{
         flex-direction: column;
         width: 100%;
         gap: 6rem;
+        -moz-column-gap: 6rem;
+        -webkit-column-gap: 6rem;
     }
     .servicios .caja img{
         width: 60%;
