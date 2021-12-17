@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 :root{
 
@@ -9,23 +9,28 @@
     --negro:#222;
     --negro1:#0d0d0d;
     
-    /* Zonas */
+    /* ZONAS */
     --header:var(--negro);
-    /* --fondo:var(--blanco1); */
     --fondo:var(--azuloscuro);
     --text:var(--blanco);
+    --dudas:#3B7375;
     --link:#B3FCFF;
 
     /* SOMBRAS / SHADOWS */
-    --shw3ac: 0 .5rem 3rem rgba(116, 190, 193,0.3);
+    /* --shw3ac: 0 .5rem 3rem rgba(116, 190, 193,0.3); */
+    --shw3ac: 0 .5rem 3rem rgba(179, 252, 255,0.3);
     --shw5Black: 0 .5rem 10rem rgba(0, 0, 0, 0.3);
-    --shw5White: 0 .1rem 2.5rem rgba(255, 255, 255, 0.3);
+    --shw5White: 0 .1rem 2.5rem rgba(255, 255, 255, 0.5);
+
+    /* TEXT FONTS and SIZE */
+    --fontTitle:"Montserrat", "Poppins","Ubuntu", sans-serif;
+    --textNormal:"Poppins", "Montserrat", "Ubuntu", sans-serif;
 }
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: "Montserrat",'Poppins', sans-serif;
+    font-family: var(--fontTitle);
     text-decoration: none;
     outline: none;
     border: none;
@@ -40,6 +45,10 @@ html{
     background: var(--fondo);
     color: var(--text);
     overflow-x: hidden;
+    min-width: 32em;
+}
+body{
+    min-width: 32em;
 }
 section{
     min-height: 100vh;
@@ -47,21 +56,26 @@ section{
     top: 0;
 }
 .btn{
-    display: inline-block;
-    margin-top:1rem ;
-    padding: 1.3rem 4rem;
+    padding: clamp(.3rem, 50vw, .7rem) clamp(2rem, 50vw, 4rem);
     border-radius: 5rem;
-    font-size: 2.3rem;
+    /* font-size: 2rem; */
+    font-size: clamp(2rem, 5vw, 2.2rem);
     background: var(--azuloscuro);
     color: var(--blanco);
     cursor: pointer;
     box-shadow: var(--shw5White);
-    transition: all .3s linear;
-    outline: var(--azulclaro) 2px solid;
+    transition: all 300ms ease-in-out;
+    outline: var(--azulsuave) 0.4rem;
+    outline-style: inset;
     outline-offset: 0.1rem;
+    display: inline-block;
 }
 .btn:hover{
+    /* color: var(--link); */
+    color: var(--azulsuave);
+    background: #eee;
     transform: scale(1.1);
+    outline: none;
 }
 .heading{
     text-align: left;
@@ -73,24 +87,30 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
 }
-p, h1, h2, h3, h4, i, input, label, a, textarea{
+
+/* Setup Text */
+h1, h2, h3, h4, p, i, input, label, textarea, span{
     font-size: 1.9rem;
-    max-width: 68ch;
+    max-width: 64ch;
     line-height: 1.3;
-    font-family: "Montserrat", "Poppins", sans-serif;
-}
+    font-weight: 300;
+    font-family: var(--fontTitle);}
 p, i, input, label, h4{
     line-height: 1.6;
-    font-family: "Poppins", "Montserrat", sans-serif;
-    color: var(--text);
+    font-family: var(--fontNormal);
+    font-weight: 400;
+    color: var(--text);}
+a{
+    font-size: 1.9rem;
+    line-height: 1.3;
+    font-weight: 400;
+    font-family: var(--fontTitle);
 }
-h3{
-    font-size: 3.6rem;
-}
-h1{
-    font-size: 5rem;
-}
+h1 { font-size: 5rem; }
+h3 { font-size: 3.6rem; }
+
 header{
     top: 0;
     left: 0;
@@ -106,9 +126,6 @@ header .logo{
     gap: 1rem;
 }
 header .logo .img_logo{
-    /* background: var(--logo);
-    -webkit-mask: url(img/logos/vBlanco.svg) no-repeat center / contain;
-    mask: url(img/logos/vBlanco.svg) no-repeat center / contain; */
     width: 5rem;
     padding: 0%;
     margin: 0;
@@ -116,7 +133,7 @@ header .logo .img_logo{
 }
 header .logo .mz{
     font-size: 5rem;
-    font-family: "Montserrat","Roboto", "Poppins","Ubuntu", sans-serif;
+    font-family: var(--fontTitle);
     line-height: 1;
     letter-spacing: 3px;
     margin-left: 1rem;
@@ -146,18 +163,26 @@ header input{
 header label{
     background: var(--azulclaro);
     -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
     color:transparent;
     cursor: pointer;
     visibility: hidden;
     opacity: 0;
 }
 .inicio{
-    justify-content: space-evenly;
-    height: 100vh;
-    padding: 0;
+    background: var(--negro2);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    width: 100vw;
+}
+.inicio .image{
+    width: 45%;
 }
 .inicio .image img{
-    width: 50vw;
+    width: 100%;
     height: auto;
     animation: float 3s linear infinite;
 }
@@ -167,46 +192,51 @@ header label{
     }
     50%{
         transform: translateY(-3.5rem);
-    }
-}
+    }}
 .inicio .content{
-    padding: 0rem;
+    width: 45%;
 }
-.inicio .content h3{
-    font-size: 6rem;
+.inicio .content h1{
     letter-spacing: 2px;
-    /* color: var(--azulclaro); */
-    color: var(--blanco);
-    text-transform: uppercase;
+    color: var(--azulblanco);
+    font-weight: 200;
+    font-size: clamp(4rem, 5vw, 5rem);
+    margin-bottom: 3rem;
+    display: inline-block;
 }
-/* .inicio .content h3{
-    margin: 1.7rem 0rem;
-    font-size: 5rem;
+.inicio .content span{
+    font-size: clamp(4.5rem, 5vw, 5rem);
     letter-spacing: 3px;
-    color: var(--azuloscuro);
-} */
+    color: var(--azulclaro);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
 .servicios{
     justify-content: center;
     flex-direction: column;
-    gap: 8rem;
     width: 100vw;
     margin: 0;
     position: relative;
+    gap: 9em;
+    -moz-column-gap: 9em;
+    -webkit-column-gap: 9em;
 }
 .servicios .heading{
-    font-size: 11vw;
+    font-size: 9vw;
     opacity: 0.9;
     font-weight: 300;
     color: var(--blanco);
 }
 .servicios .cajita{
     width: 40%;
-    /* background-color: cornflowerblue; */
 }
 .servicios .caja{
     align-items: center;
     justify-content: center;
-    gap: 5%;
+    gap: 3em;
+    -moz-column-gap: 3em;
+    -webkit-column-gap: 3em;
 }
 .servicios .caja img{
     width: 18%;
@@ -216,34 +246,29 @@ header label{
     color: var(--azulclaro);
 }
 .dudas {
-    /* width: 100%;
-    padding-top: 11rem;
-    padding-inline:14rem; */
-    padding: 6rem 0;
-    width: 95%;
-    margin: auto;
+    width: 100%;
     background: var(--blanco);
 }
 .dudas .heading{
-    text-align: left;
+    text-align: center;
     color: var(--azuloscuro);
-}
-.dudas .heading::before{
-    width: 20%;
-    left: 0;
+    font-size: 6.6vw;
 }
 .dudas .caja-contenedor{
+    width: 100%;
     margin-top: 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50em,1fr));
-    gap: 3.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(56.2em,1fr));
     flex-wrap: wrap;
     width: 100%;
-    padding: 0 3em;
+    padding: 0 4%;
+    gap: 3.5rem;
+    -moz-column-gap: 3.5rem;
+    -webkit-column-gap: 3.5rem;
 }
 .dudas .caja-contenedor .cajads{
     margin: 0 auto;
-    width: 94%;
+    width: 98%;
 }
 .dudas .caja-contenedor .cajads .h4ds{
     width: 100%;
@@ -252,11 +277,11 @@ header label{
     display: inline-block;
     transition: all 500ms ease;
     font-weight: 500;
-    font-size: 2.1rem;
+    font-size: 2.3rem;
     color: var(--azuloscuro);
 }
 .dudas .caja-contenedor .cajads.activo h4{
-    color: var(--azulsuave);
+    color: var(--dudas);
 } 
 .dudas .caja-contenedor .cajads p{
     padding: 0;
@@ -270,14 +295,13 @@ header label{
     text-align: left;
     height: auto;
     transition: all 500ms ease;
-    font-weight: 400;
-    color: var(--azulsuave);
-    text-shadow: var(--shw5White);
+    font-weight: 500;
+    color: var(--dudas);
 }
 .dudas .caja-contenedor .cajads i{
     text-align: right;
     padding: 0;
-    padding-left: 1.1rem;
+    padding-left: 1vw;
     font-size: 2.3rem;
     transition: all 500ms ease;
     /* color: #2B8EB5; */
@@ -286,7 +310,7 @@ header label{
 .dudas .caja-contenedor .cajads.activo i{
     transform: rotate(180deg);
     transition: all 500ms ease;
-    color: var(--azulsuave);
+    color: var(--dudas);
     margin-left: 1rem;
 }
 
@@ -297,24 +321,28 @@ header label{
     flex-wrap: wrap;
     width: 100%;
     background: #001D33;
+    gap: 3%;
+    -moz-column-gap: 3%;
+    -webkit-column-gap: 3%;
 }
 .contacto .image{
-    flex: 1 1 40rem;
+    flex: 1 1 45em;
 }
 .contacto .image img{
-    width: 90%;
+    width: 100%;
     height: auto;
+    margin: auto;
 }
 .contacto form{
-    flex: 1 1 40rem;
-    padding: 3rem 3rem;
-    padding-top: 20rem;
+    flex: 1 1 45em;
+    padding: 2%;
+    padding-top: 10%;
     border: .1rem solid rgba(255, 255, 255, .4);
     box-shadow: var(--shw5White);
     border-radius: .8rem;
     backdrop-filter: blur(20px);
     position: relative;
-    margin: 0 4em;
+    margin: 0 2em;
 }
 .contacto .ribon{
     height: 12vh;
@@ -384,7 +412,6 @@ header label{
     left: 0;
     background: none;
     transition: .2s linear;
-    z-index: -800;
 }
 .contacto form .inputcaja label:hover{
     cursor: text;
@@ -460,7 +487,7 @@ header label{
     text-align: center;
     vertical-align: middle;
     cursor: text;
-    padding: 0 4rem;
+    padding: 0 1%;
 }
 .footer .copyright p i{
     text-decoration: none;
@@ -472,8 +499,23 @@ header label{
     html{
         font-size: 55%;
     }
+    .inicio{
+        flex-wrap: wrap-reverse;
+    }
+    .inicio .image{
+        width: 60vw;
+    }
+    .inicio .content{
+        width: 60vw;
+    }
 }
 @media(max-width:990px){
+    .inicio .image{
+        width: 70vw;
+    }
+    .inicio .content{
+        width: 70vw;
+    }
     .footer .contenedor a{
         font-size:2.2rem;
     }
@@ -505,13 +547,10 @@ header label{
         top:100%;
         left: 0;
         width: 100%;
-        padding: 0rem;
-        border-top: .1rem solid rgba(0, 0, 0, .2);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
         transform-origin: top;
         transform: scaleY(0);
         opacity: 0;
-        transition: all 250ms linear;
+        transition: all 300ms linear;
     }
     header .navbar a{
         display: block;
@@ -524,77 +563,52 @@ header label{
     header input:checked ~ .navbar{
         transform: scaleY(1);
         opacity: 1;
-        height:110vh;
         width: 100%;
         background: var(--azuloscuro);
     }
-    section.active ~ .navbar a{
-        transform: scaleY(0);
-        opacity: 0;
-        min-height: 0;
-        display: none;
-        width: 0;
-    }
     header input:checked ~ .navbar a{
+        align-items: center;
         backdrop-filter: blur(2px);
         color: var(--blanco);
         width: 100vw;
-        height: 27.5vh;
-        display: block;
-        padding: 1em 1em;
-        text-align: center;
-        margin: auto;
+        margin: 0;
+        height: 23vh;
+        padding: 1em 0;
     }
     header input:checked ~ label::before{
         content: "\f00d"; 
         font-size: 2.6rem;
     }
     .inicio{
-        flex-direction: column-reverse;
-        justify-content: center;
-        gap: 5rem;
-        width: 70%;
-        margin: auto;
+        margin-top: 8vh;
+        gap:3%;
+        -moz-column-gap:3%;
+        -webkit-column-gap:3%;
     }
-    .inicio .image img{
-        width: 100%;
+    .inicio .image{
+        width: 90vw;
     }
-    .inicio .content h3{
-        font-size: 5rem;
+    .inicio .content{
+        width: 80vw;
     }
     p, i, input, label, h4, textarea, a{
-        font-size: 1.9rem;
-    }
-    .servicios{
-        gap: 10rem;
-        -moz-column-gap: 10rem;
-        -webkit-column-gap: 10rem;
+        font-size: 2rem;
     }
     .servicios .caja{
         flex-direction: column;
         width: 100%;
-        gap: 6rem;
-        -moz-column-gap: 6rem;
-        -webkit-column-gap: 6rem;
     }
     .servicios .caja img{
-        width: 60%;
+        width: 65%;
     }
     .servicios .caja .cajita{
-        width: 80%;
+        width: 90%;
         text-align: center;
     }
-    .dudas .heading{
-        width: 100%;
-        text-align: center;
+    .contacto form{
+        padding: 35% 4% 4% 4%;
+        margin: 0 4em;
     }
-    .dudas .caja-contenedor{
-        padding: 0%;
-    }
-    .dudas .caja-contenedor .cajads p{
-        padding: 0;
-    }
-
 }
 @media(max-width:450px){
     html{
