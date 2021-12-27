@@ -7,13 +7,14 @@
     --white:#F2FAFF;
     --white2:#FFF4F9;
     --black:#071F1E;
-    --grey:#3F4756;
+    --grey:#092036;
+    --grey2:#3F4756;
 
     /* Gradients */
     /* --gradientMain: linear-gradient(150deg, var(--clrMainBlue), var(--clrGreen), var(--clrMainBlue), var(--clrBlueLight)); */
     --gradientMain: linear-gradient(225deg, var(--clrMainBlue), var(--clrBlueLight));
-    --gradientSec: linear-gradient(223deg, var(--clrBlueDark), var(--clrMainBlue));
-    --gradientTer: linear-gradient(180deg, var(--clrBlueDark), var(--clrBlueLight));
+    --gradientSec: linear-gradient(70deg, var(--clrBlueDark), var(--clrBlueDark), var(--clrMainBlue));
+    --gradientTer: linear-gradient(135deg, var(--clrBlueDark), var(--clrBlueLight));
     
     /*  Zones*/
     --header:var(--white);
@@ -31,8 +32,9 @@
     --fontTextNormal:'Nunito', 'Montserrat', sans-serif;
 
     --fs-900:5.75rem;
-    --fs-700:4rem;
-    --fs-600:3rem;
+    --fs-800:4rem;
+    --fs-700:3rem;
+    --fs-600:2rem;
     --fs-500:1.775rem;
 
     /* Width */
@@ -69,22 +71,22 @@ h1, h2, h3, h4, p, span, a, i, label, input, textarea{
   font-family: var(--fontTitle);
   max-width: 64ch;
   text-transform: uppercase;
-  letter-spacing: 1.3px;
+  letter-spacing: 0.5px;
 }
 p, i, label, input, textarea{
-  font-size: var(--fs-500);
+  font-size: var(--fs-600);
   font-family: var(--fontTextNormal);
   text-transform: unset;
+  line-height: 1.5;
   font-weight: 400;
 }
 a{
   font-size: var(--fs-500);
   font-weight: 500;
-  letter-spacing: 1.3px;
 }
-h2{ font-size: var(--fs-700); font-weight: 700;}
-h3{ font-size: var(--fs-600); font-weight: 600;}
-h4{ font-size: var(--fs-500); font-weight: 500;}
+h2{ font-size: var(--fs-800); font-weight: 700;}
+h3{ font-size: var(--fs-700); font-weight: 600;}
+h4{ font-size: var(--fs-600); font-weight: 500;}
 /* End Default Stuff*/
 
 /* General Stuff Setup */
@@ -92,10 +94,19 @@ body{
   background: var(--gradientTer);
   position: relative;
 }
-section, main{
+section{
   width: 100%;
   /* min-height: 0vh; */
-  min-height: 100em;
+  position: relative;
+}
+section.hero{
+  min-height: 100vh;
+}
+section:not(.hero, .services){
+  padding: 8vh 0 4em;
+}
+section.services{
+  padding: 8vh 0;
 }
 .contentAuto{
   justify-content: space-between;
@@ -108,6 +119,11 @@ section, main{
 }
 .contentAuto:not(.contentHeader, .contentHero){
   margin: 1em auto;
+}
+.img{
+  max-width: 100%;
+  width: 60em;
+  height: auto;
 }
 /* End General Stuff Setup */
 
@@ -216,6 +232,9 @@ header{
 /* End Header Setup */
 
 /* Hero Setup */
+.hero{
+  background: var(--gradientTer);
+}
 /* .insideHero{
   width: var(--widthResponsive);
   margin: 0 auto;
@@ -248,7 +267,7 @@ header{
   margin-bottom: 5rem;
 }
 .titleHero h1{
-  font-size: var(--fs-600);
+  font-size: var(--fs-700);
   font-weight: 500;
   color: var(--grey);
   font-style: italic;
@@ -283,32 +302,93 @@ header{
 /* End Hero */
 
 /* Services / Servicios */
-/* .contentServices{
-  justify-content: space-between;
-  width: var(--widthResponsive);
-  margin: 0 auto;
-  margin-top: 8em;
+.services{
+  background: var(--white);
   position: relative;
-} */
-.imageServices{
-  width: auto;
-  flex: 1 0 45em;
-  justify-content: center;
+  overflow: hidden;
 }
+.descripServices, .titleServices{
+  color: var(--grey5);
+  font-weight: 600;
+  margin: 2rem auto;
+}
+.descripServices strong{
+  font-weight: 800;
+}
+/* .imageServices{
+  width: auto;
+  justify-content: center;
+} */
 .imageServices img{
   max-width: 100%;
-  width: 60em;
+  width: 65em;
   height: auto;
 }
+/* .decoServices::after{
+  position: absolute;
+  content: url(img/Puntitos.svg);
+  width: 40%;
+  height: 40%;
+  transform: rotate(270deg);
+  top: 0;
+  left: 0;
+}
+.decoServices::before{
+  position: absolute;
+  content: url(img/Puntitos.svg);
+  width: 40%;
+  height: 40%;
+  transform: rotate(270deg);
+  top: 0;
+  right: 0;
+} */
+
 /* End Services */
 
+/* Caracteristicas / Features */
+.features{ background: var(--gradientSec); }
+.contentFeatures{
+  flex-direction: column;
+  gap: 0em;
+  -moz-column-gap: 0em;
+  -webkit-column-gap: 0em;
+}
+.feature{
+  display: flex;
+  align-items: center;
+  margin: 2em auto;
+}
+.spanFeatures{
+  margin-bottom: 1rem;
+  display: inline-block;
+  color: #F9F871;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+}
+.titleFeatures{
+  margin: 2em auto 0em;
+}
+.textFeatures p{ 
+  margin: 1em auto 0; 
+}
+.textFeatures strong{
+  font-weight: 900;
+}
+.imageFeatures img{
+  width: 40em;
+  height: auto;
+  margin: auto 7.5em;
+}
+
+/* End Features */
 
 @media(max-width:1280px){
   :root{
     --fs-900:4.75rem;
-    --fs-700:4rem;
-    --fs-600:3rem;
-    --fs-500:2rem;
+    --fs-800:4rem;
+    --fs-700:3rem;
+    --fs-600:2rem;
+    --fs-500:1.775rem;
     --widthResponsive:85%;
   }
   html{
@@ -316,6 +396,7 @@ header{
   }
   .header .navbar{
     visibility: hidden;
+    width: 0;
   }
   .header .btnMenu{
     display: block;
@@ -329,6 +410,7 @@ header{
   }
   .header.open-menu .navbar{
     visibility: visible;
+    width: auto;
     position: absolute;
     top: 8vh;
     left: 50%;
@@ -349,19 +431,33 @@ header{
   .contentAuto:not(.contentHeader, .contentHero){
     margin: 3em auto;
   }
-  .contentAuto:not(.contentHeader){
+  .contentAuto:not(.contentHeader, .contentFeatures){
     flex-direction: column-reverse;
     align-self: flex-start;
-  } 
+  }
+  .titleFeatures{
+    margin: 3em auto;
+  }
+  .feature{
+    flex-direction: column;
+    align-self: center;
+    width: auto;
+  }
 }
 @media(max-width:990px){
+  .imageFeatures img{
+    width: 40em;
+    height: auto;
+    margin: 3em auto;
+  }
 }
 @media(max-width:768px){
   :root{
     --fs-900:4.75rem;
-    --fs-700:4rem;
-    --fs-600:3rem;
-    --fs-500:1.75rem;
+    --fs-800:4rem;
+    --fs-700:3rem;
+    --fs-600:1.75rem;
+    --fs-500:1.775rem;
     --widthResponsive:85%;
   }
   *{
@@ -378,10 +474,8 @@ header{
     padding-right: 2rem;
     width: max-content;
   }
-  .contentAuto:not(.contentHeader){
-    margin-bottom: 2em;
-  }
   .contentHero.contentAuto{
+    margin-bottom: 3rem;
     gap: 0rem;
     -moz-column-gap: 0rem;
     -webkit-column-gap: 0rem;
