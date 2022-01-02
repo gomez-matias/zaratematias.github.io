@@ -1,12 +1,12 @@
 const header = document.getElementById('header');
 const btnMenu = document.getElementById('btnMenu');
 // var navlinks = document.getElementsByClassName('.navlink');
-var navlinks = document.querySelectorAll('.navlink');
-console.log(navlinks.length);
+const navlinks = document.querySelectorAll('.navlink');
+const question = document.querySelectorAll('.pregunta');
+
 btnMenu.addEventListener('click', ()=> {
   btnMenu.classList.toggle('open');
   header.classList.toggle('open-menu');
-  console.log("hola soy el header");
 });
 
 navlinks.forEach((element =>{
@@ -16,24 +16,16 @@ navlinks.forEach((element =>{
   })
 }))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+question.forEach((element)=>{
+    element.addEventListener('click', (e) => {
+      if(!(e.currentTarget.classList.contains('open'))){
+        question.forEach((element)=>{
+            element.classList.remove('open');
+        })
+        e.currentTarget.classList.add('open');
+      }
+      else{
+        e.currentTarget.classList.remove('open');
+      }
+    })
+})
