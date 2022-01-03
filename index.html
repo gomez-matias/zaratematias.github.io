@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/logoWhite.svg" type="image/x-icon">
   <script src="https://kit.fontawesome.com/8d1b4c95ab.js" crossorigin="anonymous"></script>
   <title>MZ Diseño Web</title>
 </head>
@@ -16,9 +17,11 @@
   <header class="header" id="header">
     <div class="contentHeader flex contentAuto" id="contentHeader">
       <div class="divLogo">
-        <a href="#hero">
+        <a href="#hero" class="flex">
           <img src="img/logoWhite.svg" alt="logo de la empresa MZ" class="logoImg">
-          <span class="logoName">MZ</span>
+          <div>
+            <span class="logoName">MZ</span><span class="logoName2">dev</span>
+          </div>
         </a>
       </div>
       <nav class="navbar">
@@ -65,7 +68,7 @@
         <div class="textServices">
           <h2 class="titleServices">Servicios</h2>
           <p class="descripServices"><strong>Planificación, diseño y desarrollo de Sitios web</strong> orientados a promover la transformación digital de pequeños, medianos y grandes negocios.</p>
-          <p class="descripServices">Esto le permitirá <strong>tener presencia en linea, aumentar su alcance</strong> con potenciales clientes y <strong>promocionar su productos</strong> o servicios via Internet.</p>
+          <p class="descripServices">Esto le permitirá <strong>tener presencia online, aumentar su alcance</strong> con potenciales clientes y <strong>promocionar sus productos</strong> o servicios vía Internet.</p>
         </div>
         
       </div>
@@ -81,7 +84,7 @@
         <div class="textFeatures">
           <span class="spanFeatures">Intuitivo</span>
           <h3>Paginas Web Estaticas</h3>
-          <p>Son ideales para exhibir informacion acerca de su negocio, por lo cual <strong>no necesita cambios constantes ni sistemas complejos</strong> de bases de datos o gestion de usuarios.</p>
+          <p>Son ideales para exhibir información acerca de su negocio, por lo cual <strong>no necesita cambios constantes ni sistemas complejos</strong> de bases de datos o gestión de usuarios.</p>
         </div>
         <div class="imageFeatures">
           <img src="/img/estatica.svg" alt="" class="img">
@@ -91,7 +94,7 @@
         <div class="textFeatures">
           <span class="spanFeatures">Flexible</span>
           <h3>Responsive Design</h3>
-          <p><strong>Las Paginas web se adaptan a cualquier plataforma de uso</strong> como celulares, tableta y notebooks. Manteniendo su forma y funcionalidades en pantallas mas pequeñas.</p>
+          <p><strong>Las Páginas web se adaptan a cualquier plataforma de uso</strong> como celulares, tableta y notebooks. Manteniendo su forma y funcionalidades en pantallas más pequeñas.</p>
         </div>
         <div class="imageFeatures">
           <img src="/img/responsive.png" alt="" class="img">
@@ -99,7 +102,7 @@
       </div>
       <div class="feature ft-3">
         <div class="textFeatures">
-          <span class="spanFeatures">Redimiento</span>
+          <span class="spanFeatures">Rendimiento</span>
           <h3>Mantenimiento Web</h3>
           <p>Agilice su sitio web, actualice su contenido y mejore su diseño <strong>para garantizar que la imagen de su empresa en Internet se conserve atractiva</strong>, funcional y destacada con el tiempo.</p>
         </div>
@@ -134,9 +137,9 @@
 
   <section class="prizes" id="prizes">
     <div class="contentAuto">
-      <div>
+      <div class="textPrizes">
         <h2 class="titlePrizes">Precios</h2>
-        <p>*No incluyen Hosting ni Dominio <a href="#dominio">¿Que son y Porque No Estan incluydos?*</a></p>
+        <p>*No incluyen Hosting ni Dominio <a href="#dominio">¿Que son estos?*</a></p>
       </div>
     </div>
     
@@ -193,7 +196,7 @@
         </div>
       </div>
       <div class="dudaBox">
-        <div class="pregunta flex">
+        <div class="pregunta flex" id="dominio">
           <h4>Como se paga?</h4><i class="fas fa-angle-down"></i>
         </div>
         <div class="respuesta">
@@ -202,10 +205,18 @@
       </div>
       <div class="dudaBox">
         <div class="pregunta flex">
-          <h4>Algun Requisitos Previos?</h4><i class="fas fa-angle-down"></i>
+          <h4>Que es un Hosting?</h4><i class="fas fa-angle-down"></i>
         </div>
         <div class="respuesta">
-          <p>Tener un dominio (.com, .ar, etc) bajo tu poder. En caso de no tener te ayudamos a conseguir uno</p>
+          <p>Un hosting es un servicio de alojamiento de sitios web en servidores físicos remotos, allí se almacenan todos los archivos y el contenido de tu página para que este disponible para todo el mundo las 24 horas del día. Es comparable a alquilar un local o galpón para poner tu comercio.</p>
+        </div>
+      </div>
+      <div class="dudaBox">
+        <div class="pregunta flex">
+          <h4>Que es un dominio?</h4><i class="fas fa-angle-down"></i>
+        </div>
+        <div class="respuesta">
+          <p>Un dominio web es una dirección única e irrepetible de un sitio web, por ej www.mzdev.com es el dominio de esta página. Es comparable a la dirección de una vivienda o una patente de auto.</p>
         </div>
       </div>
       <div class="dudaBox">
@@ -213,44 +224,37 @@
           <h4>Como puedo administrar mi sitio yo mismo?</h4><i class="fas fa-angle-down"></i>
         </div>
         <div class="respuesta">
-          <p>Nosotros ofrecemos dos tipos de sitios web, entre ellos Los de Codigo Puro(HTML, CSS y JS) y los sitiosautoadministrables en plataformas como Wordpress, Wix, etc. El primero solo puede ser administrado si se tiene los conocimientos en programacion, el segundo no requiere dichos conocimientos.</p>
+          <p>Por el momento solo ofrezco sitios web estáticos, los cuales solo pueden ser modificados si se tiene el conocimiento necesario en desarrollo web.</p>
         </div>
       </div>
-      <div class="dudaBox">
+      <!-- <div class="dudaBox">
         <div class="pregunta flex">
           <h4>Se podra actualizar en el Futuro?</h4><i class="fas fa-angle-down"></i>
         </div>
         <div class="respuesta">
-          <p>Tener un dominio (.com, .ar, etc) bajo tu poder. En caso de no tener te ayudamos a conseguir uno</p>
+          <p>Al ser sitios web estaticos</p>
         </div>
-      </div>
-      <div class="dudaBox">
+      </div> -->
+      <!-- <div class="dudaBox">
         <div class="pregunta flex">
-          <h4>Incluye Hosting?</h4><i class="fas fa-angle-down"></i>
+          <h4>Incluye Hosting y Dominio?</h4><i class="fas fa-angle-down"></i>
         </div>
         <div class="respuesta">
-          <p>En caso de no poseer uno, te asesoramos para contratar el que mas se adapte a tu empresa</p>
+          <p>No se incluye debido a que me encargo solamente de diseñar sitios web. Igualmente lo asesorare en la compra de hosting y dominio sin costo obiamente.</p>
         </div>
-      </div>
+      </div> -->
       <div class="dudaBox">
         <div class="pregunta flex">
-          <h4>Mantenimiento Mensual</h4><i class="fas fa-angle-down"></i>
+          <h4>Mantenimiento</h4><i class="fas fa-angle-down"></i>
         </div>
         <div class="respuesta">
-          <p>Ofrecemos mantenimiento eventual dependiendo de tus necesidades en caso de ser necesario</p>
+          <p>Ofrezco mantenimiento eventual dependiendo de tus necesidades en caso de ser necesario, por un muy bajo costo.</p>
         </div>
       </div>
-      <div class="dudaBox">
-        <div class="pregunta flex">
-          <h4>Incluye Dominio?</h4><i class="fas fa-angle-down"></i>
-        </div>
-        <div class="respuesta">
-          <p>En caso de no poseer uno, te asesoramos para contratar el que mas se adapte a tu empresa</p>
-        </div>
-      </div>  
+       
     </div>
   </section>
-
+  
   <section class="contact" id="contact">
     <div class="contentContact contentAuto flex">
       <div class="contentForm">
@@ -297,8 +301,8 @@
     </div>
   </section>
 
-  <footer class="sectionFooter">
-    <span>MZ Diseños Todos los derechos reservados</span>
+  <footer class="sectionFooter flex">
+    <span><i class="far fa-copyright"></i> MZ Diseños Todos los derechos reservados</span>
   </footer>
 <script src="script.js"></script>
 
