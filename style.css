@@ -578,6 +578,15 @@ section.dudas::before{
   padding: 1.5rem;
   transition: all 500ms ease-in-out;
 }
+.respuesta a{
+  text-transform: none;
+  color: var(--clrBlueDark);
+  font-size: 1.73rem;
+}
+.respuesta a:hover{
+  color: var(--clrMainBlue);
+  border-bottom: 1px solid var(--clrMainBlue);
+}
 .pregunta.open{
   border-width: 0 0 0.35rem 0;
   border-style: solid;
@@ -595,6 +604,7 @@ section.dudas::before{
   transform: rotate(180deg);
   transition: all 500ms ease-in-out;
 }
+
 /* End Dudas */
 
 /* Contact */
