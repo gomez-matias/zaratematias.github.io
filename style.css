@@ -49,6 +49,7 @@ html{
   box-sizing: border-box;
   font-size: 62.5%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 *, *::after, *::before{
@@ -93,6 +94,15 @@ h2{ font-size: var(--fs-800); font-weight: 700;}
 h3{ font-size: var(--fs-700); font-weight: 600;}
 h4{ font-size: var(--fs-600); font-weight: 500;}
 
+/* Animacion Letras */
+/* h1, h2, h3, h4, p, span, a, i, label, input, textarea, li, button{
+  background: var(--textColor);
+  transition: background 5500ms ease-in-out;
+}
+section.visible > h1, h2, h3, h4, p, span, a, i, label, input, textarea, li, button{
+  background: none;
+} */
+/* Fin animacion letras */
 .btn{
   background: var(--white);
   color: var(--clrBlueDark);
@@ -106,26 +116,46 @@ h4{ font-size: var(--fs-600); font-weight: 500;}
   background: var(--gradientSec);
   transition: all 300ms ease-in-out;
 }
+
 /* End Default Stuff*/
 
 /* General Stuff Setup */
 body{
-  background: var(--gradientTer);
+  background: var(--gradientNeutral);
+  /* background: var(--black); */
   position: relative;
 }
+
+.services, .banner, .dudas{
+  transform: translate(-50%) scale(0.3);
+  opacity: 0;
+  width: 1px;
+  transition: all 1000ms ease-in-out;
+}
+.features, .prizes, .contact{
+  transform: translate(+50%) scale(1);
+  opacity: 0;
+  width: 1px;
+  transition: all 1000ms ease-in-out;
+}
+.visible{
+  opacity: 1;
+  transform: translate(0) scale(1);
+  width: auto;
+}
+
 section, footer{
   max-width: 100%;
   /* min-height: 0vh; */
-  position: relative;
+  height: auto;
 }
 section.hero{
   min-height: 100vh;
+  opacity: 1;
+  transform: translate(0) scale(1);
 }
-section:not(.hero, .services, .banner){
-  padding: 8vh 0 4em;
-}
-section.services{
-  padding: 8vh 0;
+section:not(.hero, .banner, .dudas, .contact){
+  padding: 8rem 0;
 }
 .contentAuto{
   justify-content: space-between;
@@ -135,9 +165,6 @@ section.services{
   gap: 5rem;
   -moz-column-gap: 5rem;
   -webkit-column-gap: 5rem;
-}
-.contentAuto:not(.contentHeader, .contentHero, .contentBanner){
-  margin: 1em auto;
 }
 .img{
   max-width: 100%;
@@ -153,7 +180,7 @@ header{
   padding: 0.35rem 0;
   position: fixed;
   transition: all 500ms ease-in-out;
-  background: black;
+  background: transparent;
 }
 .contentHeader.contentAuto{
   align-items: center;
@@ -339,6 +366,9 @@ header{
   color: var(--grey5);
   font-weight: 600;
   margin: 2rem auto;
+}
+.titleServices{
+  margin: 1rem auto;
 }
 .descripServices strong{
   font-weight: 800;
@@ -529,27 +559,34 @@ span.prizesPrize{
 /* Dudas */
 section.dudas{
   background: var(--gradientNeutral);
+  /* background: transparent; */
   --textColor:var(--black);
-  padding-bottom: 10rem;
   position: relative;
   z-index: 20;
-  min-height: 130rem;
+  padding-bottom: 6rem;
 }
 .contentDudas{
   justify-content: center;
   flex-direction: column;
+  /* position: relative;
+  z-index: 18; */
 }
 section.dudas::before{
+  position: absolute;
   content: "";
   width: 100%;
-  position: absolute;
-  height: 90%;
+  height: 100%;
   background-image: url("img/pensando.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  background-attachment: fixed;
+  background-clip:content-box;
   opacity: 0.21;
-  z-index: -4;
+  z-index: -17;
+}
+.titleDudas{
+  margin-top:8rem;
 }
 .dudaBox{
   display: block;
@@ -612,7 +649,7 @@ section.dudas::before{
   background: linear-gradient(to right,
   var(--black)54.5%, var(--white) 45%);
   --textColor:var(--white);
-  padding-top: 5rem;
+  padding-top: 8rem;
 }
 .titleContact{
   text-align: center;
@@ -621,7 +658,7 @@ section.dudas::before{
   font-size: 0;
 }
 .contentForm{
-  width: 50%;
+  width: 46.5%;
 }
 .contentForm, .contentMensaje{
   max-width: 100%;
@@ -782,6 +819,13 @@ textarea{
   html{
     font-size: 55%;
   }
+  .header{
+    height: 7rem;
+    padding: 0;
+  }
+  .contentHeader.contentAuto{
+    height: 7rem;
+  }
   .header .navbar{
     visibility: hidden;
     width: 0;
@@ -816,14 +860,11 @@ textarea{
     -moz-column-gap: 3.5rem;
     -webkit-column-gap: 3.5rem;
   }
-  .contentAuto:not(.contentHeader, .contentHero, .contentBanner){
-    margin: 3em auto;
-  }
   .contentHero, .contentServices{
     flex-direction: column-reverse;
   }
   .titleFeatures{
-    margin: 3em auto;
+    margin: 2rem auto;
   }
   .feature{
     flex-direction: column;
@@ -856,22 +897,26 @@ textarea{
   }
   .contact{
   background: linear-gradient(to bottom,
-  var(--grey)54.5%, var(--white) 45%);
+  var(--grey)51%, var(--white) 45%);
   }
   .contentMensaje{
-    /* width: 70%; */
     width: max-content;
-    margin-inline: auto;
-    margin-top: 7rem;
+    margin: 4rem auto;
   }
   .contentForm{
     width: 90%;
     margin-inline: auto;
-    margin-bottom: 7rem;
-    margin-top: 5rem;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+  }
+  .submitForm{
+    width: max-content;
   }
   .titleMensajeContact{
     margin-top: 5rem;
+  }
+  section.dudas{
+    min-height: unset;
   }
 }
 @media(max-width:768px){
@@ -923,6 +968,19 @@ textarea{
     padding: 1.5% 3.5%;
     margin: 2em auto 0;
   }
+  .contentForm{
+    margin-top: 1rem;
+  }
+  .entryForm{
+    position:relative;
+    width: 100%;
+    margin: auto;
+  }
+  /* .contentMensaje::before{
+    background-size: 85%;
+    background-position: center 65%;
+    background-attachment: fixed;
+  } */
 }
 @media(max-width:450px){
   html{
