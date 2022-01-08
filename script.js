@@ -39,22 +39,30 @@ question.forEach((element)=>{
 // Intersection Observer
 const sections = document.querySelectorAll('section')
 const showElement = (entradas, observador) => {
-  entradas.forEach((entrada)=>{
-    if(entrada.isIntersecting){
-      entrada.target.classList.add('visible');
+  entradas.forEach((element)=>{
+    if(element.isIntersecting){
+      element.target.classList.add('visible');
     }
   })
-  // sections.forEach((element)=>{
-    
-  // })
 };
 const observer = new IntersectionObserver(showElement,{
-  root: null,
-  rootMargin: '0px 0% 0% 0%'
+  // root: null,
+  rootMargin: '0% 0% 0% 0%',
 });
+var threshold = IntersectionObserver.threshold;
 sections.forEach((element)=>{
   observer.observe(element);
+  observer.unobserve(document.querySelector('.hero'))
 })
 // End Intersection Observer
 
-
+// Al bajar cambia de color el menu
+window.addEventListener('scroll', ()=>{
+  if (window.scrollY > 500) {
+    header.style.backgroundColor = 'var(--black)';
+  }
+  else{
+    header.style.backgroundColor = 'transparent';
+  }
+})
+// End Al bajar cambia de color el menu
