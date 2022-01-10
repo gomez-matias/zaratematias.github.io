@@ -1,3 +1,7 @@
+// document.cookie = 'same-site-cookie=foo; SameSite=Lax'; 
+// document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
+document.cookie = 'third_party_var=value; SameSite=None; Secure';
+document.cookie = 'third_party_var=metriplica; SameSite=None; Secure';
 const header = document.getElementById('header');
 const btnMenu = document.getElementById('btnMenu');
 // var navlinks = document.getElementsByClassName('.navlink');
@@ -37,24 +41,57 @@ question.forEach((element)=>{
 
 
 // Intersection Observer
-const sections = document.querySelectorAll('section')
-const showElement = (entradas, observador) => {
+const boxes = document.querySelectorAll('.animed');
+console.log(boxes.length);
+function showElement(entradas, observador){
   entradas.forEach((element)=>{
+    // element.target.classList.add('animate__animated', element.isIntersecting);
+    // if (element.isIntersecting) { observer.unobserve(element.target) }
     if(element.isIntersecting){
-      element.target.classList.add('visible');
+      element.target.classList.add('animate__animated');
+      observer.unobserve(element.target);
+    }
+    if(element.target.classList.contains('contentServices') && element.isIntersecting) {
+      element.target.classList.add('animate__fadeInLeft')
+    }
+    if(element.target.classList.contains('ft-1') && element.isIntersecting) {
+      element.target.classList.add('animate__fadeInLeft')
+    }
+    if(element.target.classList.contains('ft-2') && element.isIntersecting) {
+      element.target.classList.add('animate__rotateInUpRight')
+    }
+    if(element.target.classList.contains('ft-3') && element.isIntersecting) {
+      element.target.classList.add('animate__fadeInRight')
+    }
+    if(element.target.classList.contains('ft-4') && element.isIntersecting) {
+      element.target.classList.add('animate__rotateInUpLeft')
+    }
+    if(element.target.classList.contains('contentBanner') && element.isIntersecting) {
+      element.target.classList.add('animate__backInUp')
+    }
+    if(element.target.classList.contains('boxPrizes') && element.isIntersecting) {
+      element.target.classList.add('animate__jackInTheBox')
+    }
+    if(element.target.classList.contains('dudaBox') && element.isIntersecting) {
+      element.target.classList.add('animate__rotateInUpLeft')
+    }
+    if(element.target.classList.contains('contentForm') && element.isIntersecting) {
+      element.target.classList.add('animate__flipInY')
+    }
+    if(element.target.classList.contains('contentMensaje') && element.isIntersecting) {
+      element.target.classList.add('animate__flipInY')
     }
   })
 };
 const observer = new IntersectionObserver(showElement,{
-  // root: null,
-  rootMargin: '0% 0% 0% 0%',
+  root:null,
+  rootMargin: '-200px 0px -200px 0px'
+  // threshold: 0.6
 });
-var threshold = IntersectionObserver.threshold;
-sections.forEach((element)=>{
-  observer.observe(element);
-  observer.unobserve(document.querySelector('.hero'))
-})
-// End Intersection Observer
+// observer.observe(sections);
+boxes.forEach((box)=>{
+  observer.observe(box);
+});
 
 // Al bajar cambia de color el menu
 window.addEventListener('scroll', ()=>{
@@ -66,3 +103,27 @@ window.addEventListener('scroll', ()=>{
   }
 })
 // End Al bajar cambia de color el menu
+
+// // Otro Intersection Observer
+const beforeImg = document.querySelectorAll('section.dudas::before');
+console.log(beforeImg.length);
+
+const images = document.querySelectorAll('img:not(.logoImg, .imgHero)');
+// const imagenes = images.concat([beforeImg]);
+// console.log(imagenes.length);
+function lazy_loading(entries, observer){
+  entries.forEach((element)=>{
+    if (element.isIntersecting) {
+    element.target.src = element.target.dataset.src;
+    segundoObserver.unobserve(element.target);
+    }
+  })
+};
+const segundoObserver = new IntersectionObserver(lazy_loading,{
+  rootMargin: '0px 0px 600px 0px'
+});
+images.forEach((img)=>{
+  segundoObserver.observe(img);
+})
+
+// // End Otro intersection

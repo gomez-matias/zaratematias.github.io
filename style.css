@@ -6,7 +6,7 @@
     --clrBlueDark:#003E8F;
     --white:#F2FAFF;
     --white2:#FFF4F9;
-    --black:#071F1E;
+    --black:#0a0a0a;
     --grey:#092036;
     --grey2:#3F4756;
 
@@ -99,16 +99,6 @@ h3{
 h4{ 
   font-size: var(--fs-600); font-weight: 500;
 }
-
-/* Animacion Letras */
-/* h1, h2, h3, h4, p, span, a, i, label, input, textarea, li, button{
-  background: var(--textColor);
-  transition: background 5500ms ease-in-out;
-}
-section.visible > h1, h2, h3, h4, p, span, a, i, label, input, textarea, li, button{
-  background: none;
-} */
-/* Fin animacion letras */
 .btn{
   background: var(--white);
   color: var(--clrBlueDark);
@@ -130,23 +120,8 @@ body{
   background: var(--gradientNeutral);
   /* background: var(--black); */
   position: relative;
+  overflow-x: hidden;
 }
-
-.services, .banner, .dudas{
-  transform: translate(-5%) scale(0.7);
-  opacity: 0;
-  transition: all 500ms ease-in-out;
-}
-.features, .prizes, .contact{
-  transform: translate(+5%) scale(0.7);
-  opacity: 0;
-  transition: all 500ms ease-in-out;
-}
-.visible{
-  opacity: 1;
-  transform: translate(0) scale(1);
-}
-
 section, footer{
   max-width: 100%;
   /* min-height: 0vh; */
@@ -155,7 +130,6 @@ section, footer{
 section.hero{
   min-height: 100vh;
   opacity: 1;
-  transform: translate(0) scale(1);
 }
 section:not(.hero, .banner, .dudas, .contact){
   padding: 8rem 0;
@@ -174,7 +148,23 @@ section:not(.hero, .banner, .dudas, .contact){
   width: 60em;
   height: auto;
 }
+.animed{
+  opacity: 0;
+}
+.contentForm.animate__animated, .contentMensaje.animate__animated{
+  opacity: 1;
+}
 /* End General Stuff Setup */
+
+/* Animacion Setup */
+.animate__animated{
+  --animate-duration: 1.5s;
+}
+.animate__animated.animate__fadeInRight{
+  --animate-delay: 3s;
+  --animate-duration: 2s;
+}
+/* End Animation Setup */
 
 /* Header */
 header{
@@ -220,7 +210,7 @@ header{
   margin: 0 1rem;
 }
 .navlink:hover{
-  color: var(--clrBlueLight);
+  color: var(--clrBlueDark);
 }
 .btnMenu{
   position: relative;
@@ -334,19 +324,6 @@ header{
   color: var(--grey);
   font-style: italic;
 }
-/* .btnMasInfo{
-  background: var(--white);
-  color: var(--clrBlueDark);
-  font-weight: 600;
-  padding: 0.75em 2.3em;
-  border-radius: 5rem;
-  box-shadow: var(--shwMain);
-}
-.btnMasInfo:hover{
-  color: var(--white);
-  background: var(--gradientSec);
-  transition: all 300ms ease-in-out;
-} */
 .btnPresupuesto{
   padding: 0.65em 1em;
   margin-left: 4rem;
@@ -380,34 +357,11 @@ header{
 .descripServices strong{
   font-weight: 800;
 }
-/* .imageServices{
-  width: auto;
-  justify-content: center;
-} */
 .imageServices img{
   max-width: 100%;
   width: 65em;
   height: auto;
 }
-/* .decoServices::after{
-  position: absolute;
-  content: url(img/Puntitos.svg);
-  width: 40%;
-  height: 40%;
-  transform: rotate(270deg);
-  top: 0;
-  left: 0;
-}
-.decoServices::before{
-  position: absolute;
-  content: url(img/Puntitos.svg);
-  width: 40%;
-  height: 40%;
-  transform: rotate(270deg);
-  top: 0;
-  right: 0;
-} */
-
 /* End Services */
 
 /* Caracteristicas / Features */
@@ -648,7 +602,6 @@ section.dudas::before{
   transform: rotate(180deg);
   transition: all 500ms ease-in-out;
 }
-
 /* End Dudas */
 
 /* Contact */
@@ -760,18 +713,6 @@ textarea{
   opacity: 0.5;
   z-index: -4;
 }
-/* .contentMensaje div:first-child:before{
-  content: "";
-  width: 100%;
-  position: absolute;
-  height: 100%;
-  background-image: url("img/contactBanner.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.25;
-  z-index: -4;
-} */
 .contentMensaje div:not(.titleMensajeContact){
   display: flex;
   gap: 2rem;
@@ -983,11 +924,6 @@ textarea{
     width: 100%;
     margin: auto;
   }
-  /* .contentMensaje::before{
-    background-size: 85%;
-    background-position: center 65%;
-    background-attachment: fixed;
-  } */
 }
 @media(max-width:450px){
   html{
