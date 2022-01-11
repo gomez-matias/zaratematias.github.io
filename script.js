@@ -67,20 +67,20 @@ function showElement(entradas, observador){
       element.target.classList.add('animate__rotateInUpLeft')
     }
     if(element.target.classList.contains('contentBanner') && element.isIntersecting) {
-      element.target.classList.add('animate__backInUp')
+      element.target.classList.add('animate__fadeIn')
     }
     if(element.target.classList.contains('boxPrizes') && element.isIntersecting) {
       element.target.classList.add('animate__jackInTheBox')
     }
     if(element.target.classList.contains('dudaBox') && element.isIntersecting) {
-      element.target.classList.add('animate__rotateInUpLeft')
+      element.target.classList.add('animate__fadeIn')
     }
-    if(element.target.classList.contains('contentForm') && element.isIntersecting) {
-      element.target.classList.add('animate__flipInY')
-    }
-    if(element.target.classList.contains('contentMensaje') && element.isIntersecting) {
-      element.target.classList.add('animate__flipInY')
-    }
+    // if(element.target.classList.contains('contentForm') && element.isIntersecting) {
+    //   element.target.classList.add('animate__fadeIn')
+    // }
+    // if(element.target.classList.contains('contentMensaje') && element.isIntersecting) {
+    //   element.target.classList.add('animate__fadeIn')
+    // }
   })
 };
 const observer = new IntersectionObserver(showElement,{
