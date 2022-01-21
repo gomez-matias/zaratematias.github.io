@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
+  <script src="https://kit.fontawesome.com/8d1b4c95ab.js" crossorigin="anonymous"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDoy-1wAWyvyA1hxTMkDMv-HdPDMr0UWhI&callback=initMap" async defer></script>
+  <title>Plantilla Web Basica</title>
+</head>
+<body>
+  <header class="header flex">
+    <div class="wrapper flex wrapperHeader">
+      <div class="logo">
+        <a href="/" class="logo-link">
+          <img src="img/" alt="" aria-hidden="true" class="imgLogo">
+          <span class="spanLogo">Logo</span>
+        </a>
+      </div>
+      <nav class="navbar" role="navigation">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#productos" class="nav-link">Productos</a>
+        <a href="#nosotros" class="nav-link">Sobre Mi</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+        <div class="flex redesNavbar">   
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </nav>
+      <div class="btnMenuContainer">
+        <button class="btnMenu" role="button" aria-roledescription="Boton-Menu">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="section hero">
+    <div class="wrapper">
+      <div class="containerHero flex">
+        <div class="containerTextHero">
+          <h1>Diseño Web Cordoba</h1>
+          <p class="descriptionHero">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate consequatur corrupti tenetur quae illo quisquam.
+          </p>
+          <a href="#servicios" class="btn btnMasInfo">Mas Info</a>
+        </div>
+        <div class="container containerImgHero">
+          <img src="img/hero.jpg" alt="" class="imgHero">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section services" id="servicios">
+
+    <div class="wrapper wrapperServices flex">
+      <h2 class="heading headingServices">Servicios</h2>
+
+      <div class="card cardServices">
+        <div class="containerText">
+          <span>Lorem Ipsum</span> 
+            <h3>Lorem ipsum.</h3>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt vero alias corrupti! Ut iusto, odio fugiat provident quasi repudiandae sequi illo veniam ipsam laudantium dolorem, dolor molestias ducimus ad fugit! Fugit voluptatem reprehenderit pariatur, corrupti consectetur</p>
+        </div>
+        <div class="containerImgServices">
+          <img src="img/img3.jpg" alt="" class="imgServices">
+        </div>
+      </div>
+
+      <div class="card cardServices">
+        <div class="containerImgServices">
+          <img src="img/img4.jpg" alt="" class="imgServices">
+        </div>
+        <div class="containerText">
+          <span>Lorem Ipsum</span>      
+            <h3>Lorem ipsum.</h3>      
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt vero alias corrupti! Ut iusto, odio fugiat provident quasi repudiandae sequi illo veniam ipsam laudantium dolorem, dolor molestias ducimus ad fugit! Fugit voluptatem reprehenderit pariatur, corrupti consectetur</p>
+        </div>
+        
+      </div>
+
+      <div class="card cardServices">
+        <div class="containerText">  
+            <span>Lorem Ipsum</span>   
+            <h3>Lorem ipsum.</h3>      
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt vero alias corrupti! Ut iusto, odio fugiat provident quasi repudiandae sequi illo veniam ipsam laudantium dolorem, dolor molestias ducimus ad fugit! Fugit voluptatem reprehenderit pariatur, corrupti consectetur</p>
+        </div>
+        <div class="containerImgServices">
+          <img src="img/img5.jpg" alt="" class="imgServices">
+        </div>
+      </div>
+
+      <div class="card cardServices">
+        <div class="containerImgServices">
+          <img src="img/img6.jpg" alt="" class="imgServices">
+        </div>
+        <div class="containerText"> 
+          <span>Lorem Ipsum</span>      
+            <h3>Lorem ipsum.</h3>      
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt vero alias corrupti! Ut iusto, odio fugiat provident quasi repudiandae sequi illo veniam ipsam laudantium dolorem, dolor molestias ducimus ad fugit! Fugit voluptatem reprehenderit pariatur, corrupti consectetur</p>
+        </div>
+        
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section productos" id="productos">
+    <div class="wrapper wrapperProductos">
+      <div class="titleProductos">
+        <h2 class="heading headingProductos">Productos</h2>
+      </div>
+      <div class="carouselContainer">
+
+        <button aria-label="Anterior" class="carousel__anterior"><i class="fas fa-angle-left"></i></button>
+
+        <div class="carousel__lista">
+            <div class="carousel__elemento">
+              <div class="card cardProducto">
+                <div class="containerText">
+                  <span>Landing Page Basica</span> 
+                    <h4>Lorem ipsum.</h4>
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, quia. Adipisci amet, est eligendi repellat quam consequatur!</p>
+                  <span class="precioProducto">$50 USD</span><a href="#contacto" class="linkProducto">Comprar</a>
+                </div>
+                <div class="containerImgProducto">
+                  <img src="img/productos/img (6).jpg" alt="" class="imgProducto">
+                </div>
+              </div>
+            </div>
+            <div class="carousel__elemento">
+              <div class="card cardProducto">
+                <div class="containerText">
+                  <span>Landing Page Basica</span> 
+                    <h4>Lorem ipsum.</h4>
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, quia. Adipisci amet, est eligendi repellat quam consequatur!</p>
+                    <span class="precioProducto">$50 USD</span><a href="#contacto" class="linkProducto">Comprar</a>
+                </div>
+                <div class="containerImgProducto">
+                  <img src="img/productos/img (1).jpg" alt="" class="imgProducto">
+                </div>
+              </div>
+            </div>
+            <div class="carousel__elemento">
+              <div class="card cardProducto">
+                <div class="containerText">
+                  <span>Landing Page Basica</span> 
+                    <h4>Lorem ipsum.</h4>
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, quia. Adipisci amet, est eligendi repellat quam consequatur! </p>
+                    <span class="precioProducto">$50 USD</span><a href="#contacto" class="linkProducto">Comprar</a>
+                </div>
+                <div class="containerImgProducto">
+                  <img src="img/productos/img (2).jpg" alt="" class="imgProducto">
+                </div>
+              </div>
+            </div>
+            <div class="carousel__elemento">
+              <div class="card cardProducto">
+                <div class="containerText">
+                  <span>Landing Page Basica</span> 
+                    <h4>Lorem ipsum.</h4>
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, quia. Adipisci amet, est eligendi repellat quam consequatur! </p>
+                    <span class="precioProducto">$50 USD</span><a href="#contacto" class="linkProducto">Comprar</a>
+                </div>
+                <div class="containerImgProducto">
+                  <img src="img/productos/img (3).jpg" alt="" class="imgProducto">
+                </div>
+              </div>
+            </div>
+            <div class="carousel__elemento">
+              <div class="card cardProducto">
+                <div class="containerText">
+                  <span>Landing Page Basica</span> 
+                    <h4>Lorem ipsum.</h4>
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, quia. Adipisci amet, est eligendi repellat quam consequatur! </p>
+                    <span class="precioProducto">$50 USD</span><a href="#contacto" class="linkProducto">Comprar</a>
+                </div>
+                <div class="containerImgProducto">
+                  <img src="img/productos/img (4).jpg" alt="" class="imgProducto">
+                </div>
+              </div>
+            </div>
+            <div class="carousel__elemento">
+              <div class="card cardProducto">
+                <div class="containerText">
+                  <span>Landing Page Basica</span> 
+                    <h4>Lorem ipsum.</h4>
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, quia. Adipisci amet, est eligendi repellat quam consequatur! </p>
+                    <span class="precioProducto">$50 USD</span><a href="#contacto" class="linkProducto">Comprar</a>
+                </div>
+                <div class="containerImgProducto">
+                  <img src="img/productos/img (5).jpg" alt="" class="imgProducto">
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <button aria-label="Siguiente" class="carousel__siguiente"><i class="fas fa-angle-right"></i></button>
+
+      </div>
+      <div role="tablist" class="carousel__indicadores"></div>
+    </div>
+  </section>
+
+
+
+  <section class="section nosotros" id="nosotros">
+      <div class="wrapper wrapperNosotros">
+        <div class="containerTitle">
+          <h2 class="heading">Sobre Mi</h2>
+        </div>
+        <div class="containerContent flex">
+          <div class="containerImg flex">
+            <img src="img/nosotros.jpg" alt="" class="imgNosotros">
+          </div>
+          <div class="containerText textNosotros">
+            <span>Desarrollador Web</span>
+            <h4>Adrian Zarate</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, sunt quam rem labore repellat beatae, animi excepturi perspiciatis qui quae consequuntur, expedita veniam dolorem doloribus nesciunt? Sed dolorum qui, minus nisi, dolorem vero odit tempora voluptas optio necessitatibus consectetur repudiandae.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section contacto" id="contacto">
+      <div class="wrapper wrapperContacto">
+
+        <div class="titleContact">
+          <h2 class="heading">Contacto</h2>
+        </div>
+
+        <div class="gridContact">
+
+
+          <div class="containerDatos datos box flex">
+            <div class="titleDatos">
+              <h4>Datos de Contacto</h4>
+            </div>
+            <div class="textDatos flex">
+              <div class="direccionDatos flex">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="calles">
+                  <p>Argentina, Cordoba</p> <br><p>Vicente Forestieri 4700</p>
+                </div>               
+              </div>
+              <div class="horariosDatos">
+                <i class="far fa-clock"></i><p>Lunes a Viernes 8hs a 20hs</p>
+              </div>
+              <div class="emailDatos">
+                <i class="fas fa-at"></i><a href=""> tuempresa@gmail.com</a>
+              </div>
+              <div class="telefonoDatos">
+                <i class="fab fa-whatsapp"></i><a href=""> +54 351 7608485</a>
+              </div>
+              <div class="redesDatos flex">   
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="containerMaps maps box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108977.23050065644!2d-64.26438364404245!3d-31.39928763608521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432985f478f5b69%3A0xb0a24f9a5366b092!2zQ8OzcmRvYmE!5e0!3m2!1ses-419!2sar!4v1642792767416!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <div class="containerFormMain form box">
+              <div class="titleForm">
+                <h4>Envie un Mensaje</h4>
+              </div>
+            <form action="" method="post">
+
+              <div class="containerForm">
+                <div class="labels">
+                  <label for="nombre">Nombre</label>
+                </div>
+
+                <span class="entry">
+                  <input type="text" class="input" name="nombre" placeholder="Matias Gomez" aria-placeholder="Matias Gomez" required/>
+                </span>
+
+                <div class="labels">
+                  <label for="email">Email</label>
+                </div>
+
+                <span class="entry">
+                  <input type="email" class="input" name="email" placeholder="gomezmatias@gmail.com" aria-placeholder="gomezmatias@gmail.com" required/>
+                </span>
+
+                <div class="labels">
+                  <label for="telefono">Telefono</label>
+                </div>
+
+                <span class="entry">
+                  <input type="number" class="input" name="telefono" placeholder="+54 351 7608485" aria-placeholder="+54 351 7608485" required/>
+                </span>
+
+                <div class="labels labelTextarea">
+                  <label for="mensaje">Mensaje</label>
+                </div>
+
+                <div class="textarea">
+                  <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje" placeholder="Hola quiero saber los precios de..." aria-placeholder="Hola quiero saber los precios de..." required></textarea>
+                </div>
+                <div class="containerBtnEnviar">
+                  <button type="submit" class="btn btnEnviar">Enviar</button>
+                </div>
+
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- <footer class="section">
+      <div class="container">
+
+      </div>
+    </div>
+  </footer> -->
+
+  <span class="entry"><input type="text" class="input" name="nombre"/></span>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+</body>
+</html>
